@@ -3,13 +3,16 @@
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <form action="{{ path('login') }}" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <div class="col-12 text-center mt-5">
+        <form action="{{ path('login') }}" method="post">
+            <div class="form-groups mb-2">
+                <input type="text" id="username" class="text-center" placeholder="username" name="_username" value="{{ last_username }}" />
+            </div>
+            <div class="form-groups mb-2">
+                <input type="password" id="password" class="text-center" placeholder="password" name="_password" />
+            </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password" />
-
-        <button type="submit">login</button>
-    </form>
+            <button class="btn btn-success" type="submit">login</button>
+        </form>
+    </div>
 {% endblock %}
