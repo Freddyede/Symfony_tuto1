@@ -10,6 +10,9 @@ security:
     firewalls:
         main:
             anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login
             http_basic: ~
             provider: in_memory
 
